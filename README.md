@@ -1,2 +1,2 @@
 # Oulu-MIPT-ML-Seminar-2018
-Machine Learning seminar tutorials. Spring 2017
+Machine Learning seminar tutorials. Spring 2018
