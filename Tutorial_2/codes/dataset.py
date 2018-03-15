@@ -1,3 +1,9 @@
+"""
+Dataset
+
+(c) Aleksei Tiulpin, University of Oulu, 2018
+"""
+
 import torch
 import torch.utils.data as data
 import torch.nn.functional as F
@@ -26,8 +32,7 @@ class InvasiveSpeciesDataset(data.Dataset):
     def __getitem__(self, idx):
         entry = self.split.iloc[ind]
         fname, label = entry.name, entry.invasive
-        img = os.path.join(self.dataset_loc, fname)
-        
+        img = cv2.imread(os.path.join(self.dataset_loc, fname))
         img = self.tranforms(img)
 
         return {'img': img, 'label':label}

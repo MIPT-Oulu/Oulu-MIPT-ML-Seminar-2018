@@ -1,3 +1,10 @@
+"""
+Validation utilities
+
+(c) Aleksei Tiulpin, University of Oulu, 2018
+
+"""
+
 import gc
 from tqdm import tqdm
 import torch.nn as nn

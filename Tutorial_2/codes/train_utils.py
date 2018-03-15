@@ -1,7 +1,7 @@
 """
 Training utilities.
 
-(c) Aleksei Tiulpin, Iaroslav Melekhov, 2018
+(c) Aleksei Tiulpin, University of Oulu, 2018
 
 """
 
