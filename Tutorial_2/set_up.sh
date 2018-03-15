@@ -13,3 +13,5 @@ echo "{\"username\":\"$1\",\"key\":\"$2\"}" > $HOME/.kaggle/kaggle.json
 kaggle competitions download -c invasive-species-monitoring --force
 mkdir data
 mv $HOME/.kaggle/competitions/invasive-species-monitoring/* data/
+# To store the logs
+mkdir logs
