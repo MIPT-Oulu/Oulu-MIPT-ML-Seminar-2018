@@ -1,4 +1,10 @@
 pip install kaggle
+pip install torchvision
+pip install http://download.pytorch.org/whl/cpu/torch-0.3.1-cp36-cp36m-linux_x86_64.whl --user
+pip install opencv-python
+pip install tqdm
+pip install scikit-learn
+
 conda install -c bioconda p7zip
 
 # Setting things up
