@@ -10,6 +10,7 @@ conda install -c bioconda p7zip
 # Setting things up
 mkdir $HOME/.kaggle/
 echo "{\"username\":\"$1\",\"key\":\"$2\"}" > $HOME/.kaggle/kaggle.json
+chmod 600 $HOME/.kaggle/kaggle.json
 
 # Downloading the data
 kaggle competitions download -c invasive-species-monitoring --force
@@ -17,6 +18,7 @@ mkdir data
 mv $HOME/.kaggle/competitions/invasive-species-monitoring/* data/
 
 cd data/
-7z x train.csv.zip
+7z x train.7z
+7z x test.7z
 unzip train_labels.csv.zip
-7z x sample_submission.csv.zip
+unzip sample_submission.csv.zip
