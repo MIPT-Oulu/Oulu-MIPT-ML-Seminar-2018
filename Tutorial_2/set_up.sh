@@ -13,12 +13,13 @@ echo "{\"username\":\"$1\",\"key\":\"$2\"}" > $HOME/.kaggle/kaggle.json
 chmod 600 $HOME/.kaggle/kaggle.json
 
 # Downloading the data
-kaggle competitions download -c invasive-species-monitoring --force
+kaggle competitions download -c invasive-species-monitoring --file train.7z
+kaggle competitions download -c invasive-species-monitoring --file train_labels.csv.zip
+
 mkdir data
 mv $HOME/.kaggle/competitions/invasive-species-monitoring/* data/
 
 cd data/
 7z x train.7z
-7z x test.7z
+rm train.7z
 unzip train_labels.csv.zip
-unzip sample_submission.csv.zip

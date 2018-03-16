@@ -27,13 +27,18 @@ class InvasiveSpeciesDataset(data.Dataset):
         # Train data split
         self.split = split
         # Augmentations and other transformations
-        self.transform = transform
+        self.transforms = transform
 
     def __getitem__(self, idx):
-        entry = self.split.iloc[ind]
-        fname, label = entry.name, entry.invasive
-        img = cv2.imread(os.path.join(self.dataset_loc, fname))
-        img = self.tranforms(img)
+        entry = self.split.iloc[idx]
+        fname, label = entry['name'], entry['invasive']
+        img = cv2.imread(os.path.join(self.dataset_loc, str(fname)+'.jpg'))
+        if img is None:
+            print(fname, idx, entry)
+        img = self.transforms(img)
 
         return {'img': img, 'label':label}
+    
+    def __len__(self):
+        return self.split.shape[0]
         
